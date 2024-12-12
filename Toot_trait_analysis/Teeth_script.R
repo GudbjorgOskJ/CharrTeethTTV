@@ -666,7 +666,7 @@ DenNr_mod2 <- glmmTMB(tooth_count ~ (morph +sex + log2(length_cm))^2 + side + si
 
 DenNr_mod2 <- glmmTMB(tooth_count ~ (morph +sex + logCsize_dentary)^2 + side + side:sex + side:morph
                       + (1 + side| morph:sex:id_me/replica),
-                      data = datL[datL$bone=="Maxilla" & !is.na(datL$logCsize_dentary),])
+                      data = datL[datL$bone=="Dentary" & !is.na(datL$logCsize_dentary),])
 
 summary(DenNr_mod2)
 car::Anova(DenNr_mod2)
